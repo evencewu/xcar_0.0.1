@@ -20,15 +20,15 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(ai_msgs REQUIRED) 
+find_package(xcar_msg REQUIRED)
 
 include_directories(
   include
   ${EIGEN3_INCLUDE_DIRS}
 )
 
-
 add_executable(master src/master.cpp)
-ament_target_dependencies(master rclcpp geometry_msgs ai_msgs)
+ament_target_dependencies(master rclcpp geometry_msgs ai_msgs xcar_msg)
 
 install(DIRECTORY include/
   DESTINATION include/
